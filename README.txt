@@ -1,0 +1,1 @@
+Borrar lineas 41 y 46 (strUser = "UY03039393";) de User.cs para PRD
