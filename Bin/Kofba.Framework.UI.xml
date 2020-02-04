@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kofba.Framework.UI</name>
+    </assembly>
+    <members>
+        <member name="M:Kofba.Framework.UI.Repository.RepositoryController.InitializeStructure">
+            <summary>
+            Creates the elementhal structure into database if needed.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.UI.Repository.RepositoryController.VerifyDatabaseStructure">
+            <summary>
+            Checks database searching for tables RepositoryRecord and
+            RepositoryRecordCache.
+            </summary>
+            <returns>Returns False if needs to reconstruct.</returns>
+        </member>
+        <member name="M:Kofba.Framework.UI.Repository.RepositoryController.LoadByKey(System.Guid)">
+            <summary>
+            Get the full RepositoryRecord object from his unique identifier.
+            </summary>
+            <param name="key">The object id.</param>
+            <returns>A single object that includes the 'Content' property. This is the only
+            method that returns all the file content.
+            </returns>
+        </member>
+        <member name="M:Kofba.Framework.UI.Repository.RepositoryController.LoadById(System.Guid)">
+            <summary>
+            Search all items from a group. Must use LoadByKey() to get the 'Content' property.
+            This method only applies for commited files.
+            </summary>
+            <param name="id">Group id.</param>
+            <returns>All repository files from the group id, except the property 'Content'</returns>
+        </member>
+        <member name="M:Kofba.Framework.UI.UsageStatistics.UsageController.InitializeStructure">
+            <summary>
+            Creates the elementhal structure into database if needed.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.UI.UsageStatistics.UsageController.VerifyDatabaseStructure">
+            <summary>
+            Checks database searching for table Usage and
+            RepositoryRecordCache.
+            </summary>
+            <returns>Returns False if needs to reconstruct.</returns>
+        </member>
+        <member name="M:Kofba.Framework.UI.UltraWebGrid.UltraGridConfiguration.SetInitialState(Infragistics.WebUI.UltraWebGrid.UltraWebGrid)">
+            <summary>
+            Clean grid configuration.
+            </summary>
+            <param name="uwg"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,143 @@
+<%@ Register Assembly="Infragistics2.WebUI.UltraWebGrid.v6.3, Version=6.3.20063.1054, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" Namespace="Infragistics.WebUI.UltraWebGrid" TagPrefix="igtbl" %>
+<igtbl:UltraWebGrid runat="server"
+    SkinID="UltraWebGridConfigurator">
+  <DisplayLayout BorderCollapseDefault="Separate" 
+    CellPaddingDefault="2" 
+    NoDataMessage="Sin Datos" 
+    NullTextDefault=" " 
+    RowHeightDefault="15px" ViewType="OutlookGroupBy" 
+    AllowColSizingDefault="Free" 
+    AllowColumnMovingDefault="OnServer" 
+    AllowDeleteDefault="No"
+    AllowUpdateDefault="No"
+    AllowSortingDefault="Yes"
+    CellClickActionDefault="RowSelect" 
+    GridLinesDefault="None" 
+    HeaderClickActionDefault="SortSingle" 
+    RowSelectorsDefault="No" 
+    SelectTypeRowDefault="Extended">
+    <ActivationObject BorderColor="Firebrick">
+      <BorderDetails />
+    </ActivationObject>
+    <AddNewBox Hidden="False">
+      <ButtonStyle />
+      <Style BorderWidth="1px" BorderColor="InactiveCaption" BorderStyle="Solid" BackColor="Window">
+        <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+      </Style>
+    </AddNewBox>
+    <EditCellStyleDefault BorderWidth="0px" BorderStyle="None" />
+    <FixedCellStyleDefault />
+    <FixedFooterStyleDefault />
+    <FixedHeaderStyleDefault />
+    <FooterStyleDefault BorderWidth="1px" BorderStyle="Solid" BackColor="LightGray">
+      <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+    </FooterStyleDefault>
+    <FormulaErrorStyleDefault />
+    <FrameStyle ForeColor="Black" BorderWidth="1px" BorderColor="Gainsboro" BorderStyle="Solid" Font-Size="10px" Font-Names="Tahoma" BackColor="Window" />
+    <GroupByBox Prompt="Para agrupar un campo arrástrelo hasta aquí">
+      <BandLabelStyle />
+      <Style ForeColor="Black" BorderColor="Window" Font-Italic="True" Font-Size="10px" Font-Names="Tahoma" BackColor="ActiveBorder" />
+    </GroupByBox>
+    <GroupByRowStyleDefault ForeColor="Black" BorderColor="Window" BackColor="WhiteSmoke" />
+    <HeaderStyleDefault ForeColor="Goldenrod" HorizontalAlign="Left" BorderStyle="Solid" Font-Size="10px" Font-Names="Tahoma" Font-Bold="True" BackColor="DarkRed">
+      <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+    </HeaderStyleDefault>
+    <Pager NextText="_UltraWebGrid_PagerNextText_Text" PrevText="_UltraWebGrid_PagerPrevText_Text">
+      <Style BorderWidth="1px" BorderStyle="Solid" BackColor="LightGray">
+        <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+      </Style>
+      <ComboStyle />
+    </Pager>
+    <RowAlternateStyleDefault BackColor="Ivory" />
+    <RowExpAreaStyleDefault />
+    <RowSelectorStyleDefault />
+    <RowStyleDefault BorderWidth="1px" BorderColor="Silver" BorderStyle="Solid" BackColor="Window">
+      <BorderDetails ColorTop="Window" ColorLeft="Window" />
+      <Padding Left="3px" />
+    </RowStyleDefault>
+    <SelectedGroupByRowStyleDefault />
+    <SelectedHeaderStyleDefault />
+    <SelectedRowStyleDefault />
+    <FilterOptionsDefault EmptyString="_UltraWebGrid_EmptyString_Text" AllString="_UltraWebGrid_AllString_Text" NonEmptyString="_UltraWebGrid_NonEmptyString_Text">
+      <FilterDropDownStyle BorderWidth="1px" BorderColor="Silver" BorderStyle="Solid" Font-Size="10px" Font-Names="Tahoma" Font-Bold="True" BackColor="WhiteSmoke" 
+      Width="99%" 
+      CustomRules="overflow:auto;">
+        <Padding Left="2px" />
+      </FilterDropDownStyle>
+      <FilterHighlightRowStyle ForeColor="White" BackColor="#151C55" />
+    </FilterOptionsDefault>
+    <ImageUrls CollapseImage="../../img/Minus.gif" ExpandImage="../../img/Plus.gif" />
+  </DisplayLayout>
+</igtbl:UltraWebGrid>
+
+<igtbl:ultrawebgrid SkinID="DefaultView" runat="server" Width="99%" Height="650px">
+
+  <DisplayLayout BorderCollapseDefault="Separate" 
+    NoDataMessage="Sin Datos" 
+    NullTextDefault=" " 
+    RowHeightDefault="15px" ViewType="OutlookGroupBy" 
+    AllowColSizingDefault="Free" 
+    AllowColumnMovingDefault="OnServer"
+    AllowSortingDefault="Yes"
+    AllowDeleteDefault="No"
+    AllowUpdateDefault="No"
+    CellClickActionDefault="RowSelect" 
+    GridLinesDefault="None" 
+    HeaderClickActionDefault="SortSingle" 
+    RowSelectorsDefault="No" 
+    SelectTypeRowDefault="Single" GroupByRowDescriptionMaskDefault="[value] ([count])" Name="UltraWebGrid1" Version="4.00" FixedColumnScrollType="Column" StationaryMargins="HeaderAndFooter" StationaryMarginsOutlookGroupBy="True" TableLayout="Fixed">
+    <ActivationObject BorderColor="Firebrick">
+    </ActivationObject>
+    <AddNewBox Hidden="False">
+      <Style BorderWidth="1px" BorderColor="InactiveCaption" BorderStyle="Solid" BackColor="Window">
+        <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+      </Style>
+    </AddNewBox>
+    <EditCellStyleDefault BorderWidth="0px" BorderStyle="None" />
+    <FooterStyleDefault BorderWidth="1px" BorderStyle="Solid" BackColor="LightGray">
+      <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+    </FooterStyleDefault>
+    <FrameStyle ForeColor="Black" BorderWidth="1px" BorderColor="Gainsboro" BorderStyle="Solid" Font-Size="XX-Small" Font-Names="Tahoma" BackColor="Window" Height="100%" Width="100%" />
+    <GroupByBox Prompt=" ">
+      <Style ForeColor="Black" BorderColor="Window" Font-Italic="True" Font-Size="10px" Font-Names="Tahoma" BackColor="ActiveBorder" />
+    </GroupByBox>
+    <GroupByRowStyleDefault ForeColor="Black" BorderColor="Window" BackColor="WhiteSmoke" Cursor="Hand"/>
+    <HeaderStyleDefault ForeColor="Goldenrod" HorizontalAlign="Left" BorderStyle="Solid" Font-Size="10px" Font-Names="Tahoma" Font-Bold="True" BackColor="DarkRed" Cursor="Hand">
+      <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+    </HeaderStyleDefault>
+    <Pager NextText="_UltraWebGrid_PagerNextText_Text" PrevText="_UltraWebGrid_PagerPrevText_Text">
+      <Style BorderWidth="1px" BorderStyle="Solid" BackColor="LightGray">
+        <BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White" />
+      </Style>
+    </Pager>
+    <RowAlternateStyleDefault BackColor="Ivory" Cursor="Hand"/>
+    <RowStyleDefault BorderWidth="1px" BorderColor="Silver" BorderStyle="Solid" BackColor="Window" Cursor="Hand">
+      <BorderDetails ColorTop="Window" ColorLeft="Window" />
+      <Padding Left="3px" />
+    </RowStyleDefault>
+    <FilterOptionsDefault EmptyString="_UltraWebGrid_EmptyString_Text" AllString="_UltraWebGrid_AllString_Text" NonEmptyString="_UltraWebGrid_NonEmptyString_Text" AllowRowFiltering="OnClient" ShowAllCondition="Yes" ShowEmptyCondition="Yes" ShowNonEmptyCondition="Yes">
+      <FilterDropDownStyle BorderWidth="1px" BorderColor="Silver" BorderStyle="Solid" Font-Size="XX-Small" Font-Names="Tahoma" Font-Bold="False" BackColor="WhiteSmoke" Cursor="Hand" 
+      >
+        <Padding Left="2px" Right="2px" Top="2px" />
+          <BorderDetails ColorBottom="Gray" ColorRight="Gray" />
+      </FilterDropDownStyle>
+      <FilterHighlightRowStyle ForeColor="White" BackColor="#151C55" />
+    </FilterOptionsDefault>
+    <ImageUrls CollapseImage="../../img/Minus.gif" ExpandImage="../../img/Plus.gif" />
+  </DisplayLayout>
+            <Bands>
+                <igtbl:UltraGridBand>
+                    <AddNewRow View="NotSet" Visible="NotSet">
+                    </AddNewRow>
+                    <FilterOptions AllString="" EmptyString="" NonEmptyString="">
+                        <FilterDropDownStyle BackColor="White" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
+                            CustomRules="overflow:auto;" Font-Names="Verdana,Arial,Helvetica,sans-serif"
+                            Font-Size="11px" Width="200px">
+                            <Padding Left="2px" />
+                        </FilterDropDownStyle>
+                        <FilterHighlightRowStyle BackColor="#151C55" ForeColor="White">
+                        </FilterHighlightRowStyle>
+                    </FilterOptions>
+                </igtbl:UltraGridBand>
+            </Bands>
+</igtbl:UltraWebGrid>

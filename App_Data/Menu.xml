@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <MenuItem title="Inicio"  url="Default.aspx" description="" profile="Everyone"/>
+  <MenuItem title="Vistas"  url="Default.aspx" description="" profile="Everyone">
+    <MenuItem title="Por Evaluado"  url="VEvaluado.aspx" description="" profile="Everyone"/>
+    <MenuItem title="Por Evaluador"  url="VEvaluador.aspx" description="" profile="Everyone"/>
+    <MenuItem title="Por Concurrente"  url="VConcurrente.aspx" description="" profile="Everyone"/>
+    <!--<MenuItem title="Por Tipo Variable"  url="VVariable.aspx" description="" profile="Admin"/>-->
+    <MenuItem title="Por Estado"  url="VEstado.aspx" description="" profile="Everyone"/>
+    <MenuItem title="Por Calificación"  url="VCalificacion.aspx" description="" profile="Everyone"/>
+    <MenuItem title="Por Local"  url="VLocal.aspx" description="" profile="Everyone"/>
+    <MenuItem title="Por Gerencia"  url="VGerencia.aspx" description="" profile="Everyone"/>
+
+  </MenuItem>
+
+
+  <MenuItem title="Mis evaluaciones"  url="Default.aspx" description="" profile="Everyone"/>
+  <MenuItem title="Administración"  url="Administracion.aspx" description="" profile="AdminCentral"/>
+  <!--<MenuItem title="Estadísticas" url="Statistics.aspx"  description="" profile="Admin"/>-->
+  <MenuItem title="Log In" url="LogIn.aspx"  description="" profile="Admin"/>
+  <MenuItem title="Log Out" url="LogOut.aspx"  description="" profile="Everyone"/>
+  <MenuItem title="Ayuda" url="Default.aspx" description="" profile="Everyone">
+    <MenuItem title="Cómo dar feedback" url="Ayuda/Cómo dar feedback_COCA COLA FEMSA ARGENTINA vf.mov" target="_blank" description="" profile="Everyone" />
+    <MenuItem title="Guía Modelo de Desarrollo 70-20-10" url="Ayuda/Modelo 70 20 10.pdf" target="_Blank" description="" profile="Everyone" />
+    <MenuItem title="Roles y Etapas del proceso GDD" url="Ayuda/Roles y Etapas del proceso GDD 2016.pdf" target="_blank" description="" profile="Everyone" />
+    <MenuItem title="Instructivo para ingresar a GDD desde VPN" url="Ayuda/Instructivo para ingresar a GDD desde VPN.pdf" target="_blank" description="" profile="Everyone" />
+    <MenuItem title="Instructivo para cargar las evaluaciones" url="Ayuda/Instructivo para cargar las evaluaciones.pdf" target="_blank" description="" profile="Everyone" />
+    <MenuItem title="Instructivo para cargar autoevaluaciones" url="Ayuda/Instructivo para cargar autoevaluaciones.pdf" target="_blank" description="" profile="Self" />
+  </MenuItem>
+
+
+</Menu>
+
+

@@ -1,0 +1,227 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" EnableViewState="true" %>
+<%@ Register src="UI/NotificationBanner.ascx" tagname="NotificationBanner" tagprefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/GDD.css"/>
+    <script language="javascript" type="text/javascript" src="GDD.js"></script>
+    
+<!--[if gte IE 5.5]>
+<![if lt IE 7]>
+<style>
+
+#modalBackground, #modalIframe
+{
+    position: absolute;
+    left: expression(ignoreMe = document.documentElement.scrollLeft + "px");
+    top: expression(ignoreMe = document.documentElement.scrollTop + "px");
+    width: expression(document.documentElement.clientWidth + "px");
+    height: expression(document.documentElement.clientHeight + "px");
+}
+
+#modalIframe
+{
+    filter: alpha(opacity=0);
+    z-index: 8;
+}
+
+
+#modalWindow, #modalPageCancel, #modalPageMoreInfo, #modalPageSendAuthor, #modalPageSendAuthorMoreInfo, #modalPageSendAdmin
+{
+    position: absolute;
+    left: expression(ignoreMe = document.documentElement.scrollLeft + "px");
+    top: expression(ignoreMe = document.documentElement.scrollTop + "px");
+}
+
+</style>
+<![endif]>
+<![endif]-->
+    
+</head>
+<body onload = "setBtnSend();">    
+    <a name="t"></a>
+    <form id="MainForm" runat="server" defaultbutton="" >
+        <asp:HiddenField ID="tab" runat="server" />
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" ></asp:ScriptManager>
+        <table  border="0" align="center"  cellpadding="0" cellspacing="0" class="mainPage">
+          <tr>
+            <td width="12" height="12" align="right" valign="bottom"><img src="App_Images/borde_lt.gif" width="12" height="12"></td>
+            <td height="12" class="innerPage"></td>
+            <td width="12" height="12" align="left" valign="bottom"><img src="App_Images/borde_rt.gif" width="12" height="12"></td>
+          </tr>
+          <tr>
+            <td class="innerPage"></td>
+            <td height="70" align="left" valign="top" class="innerPage">
+            <!--Start Navegacion -->
+                    <table width="100%" height="60" border="0" cellpadding="0" cellspacing="0" class="bkg_navBarApp">
+					
+
+                      <tr>
+
+                      <td width="3" align="left" valign="bottom" ><img src="App_Images/nav_left.jpg" width="3" height="60" /></td>
+                        <td align="left" valign="bottom" class="navBarApp">
+                            <span class="tit_nav_aplicativo">
+                            <asp:Label ID="lblAppName" runat="server" meta:resourcekey="lblAppName"></asp:Label>
+                            </span>
+
+                            <asp:Menu ID="Menu" runat="server" SkinID="Horizontal" 
+                                MaximumDynamicDisplayLevels="10">
+                             <DataBindings>
+                                  <asp:menuitembinding datamember="MenuItem" 
+                                    NavigateUrlField="url" TextField="title" ToolTipField="description" 
+                                    ValueField="title"/>
+                             </DataBindings>
+                            </asp:Menu>
+                        </td>
+ 
+                       <td  width="3"  align="right" valign="bottom" ><img src="App_Images/nav_left.jpg" width="3" height="60" /></td>
+                        <td width="200"  align="right" valign="bottom"  class="navBarApp">
+                            <span class="tit_user_logged">
+								<asp:Label width="200" ID="lblUserLogged"  runat="server"  ></asp:Label><br />
+							</span>
+						</td>
+
+                        <td width="3" align="left" valign="bottom"><img src="App_Images/nav_right.jpg" width="3" height="60" /></td>
+                      </tr>
+                    </table>
+         <!--End Navegacion -->       </td>
+        <td class="innerPage"></td>
+          </tr>
+
+          <tr>
+            <td class="innerPage"></td>
+            <td align="left" valign="top" class="innerPage">
+                <!--Start mainTable-->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mainTable">
+                  <tr>
+                    <td colspan="2" >
+                   
+                    <asp:contentplaceholder id="CPH" runat="server"></asp:contentplaceholder>
+                    </td>
+                  </tr>
+                </table>
+                <!--End mainTable-->    </td>
+            <td class="innerPage"></td>
+          </tr>
+          <tr>
+            <td class="innerPage"></td>
+            <td align="left" valign="bottom" class="footer"><img src="App_Images/logo_femsa.gif" width="70" height="40" align="absmiddle"><span>&nbsp;Copyright &copy; 2009 - Coca-Cola FEMSA Argentina. </span> 
+          </td>
+            
+
+          <td class="innerPage"></td>
+         
+          </tr>
+          <tr>
+            <td width="12" height="12" align="right" valign="top"><img src="App_Images/borde_lb.gif" width="12" height="12"></td>
+            <td class="innerPage" ></td>
+            <td width="12" height="12" align="left" valign="top"><img src="App_Images/borde_rb.gif" width="12" height="12"></td>
+          </tr>
+        </table>
+    </form>
+
+    <div id="modalPageMoreInfo" class="modal" >
+        <table  border="0" align="center"  cellpadding="0" cellspacing="0" >
+          <tr>
+            <td width="12" height="12" align="right" valign="bottom"><img src="App_Images/borde_lt.gif" width="12" height="12"></td>
+            <td height="12" class="innerPage"></td>
+            <td width="12" height="12" align="left" valign="bottom"><img src="App_Images/borde_rt.gif" width="12" height="12"></td>
+          </tr>
+          <tr class="innerPage">
+            <td></td>
+            <td>
+                   <table border="0" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <td>
+                            <img width="40" height="38" src="App_Images/alerta.png" />
+                        </td>
+                        <td width = "100%">
+                            <span class="titulo"><div id="MsgText"class="modalBody"></div></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="innerPage">
+          <td></td>
+            <td align="center">
+                <table border="0" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <td>
+                            <input id="btnClose" type="button" value="Ok" class="bt_sm" onclick="hideModal('modalPageMoreInfo')" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+          <td></td>
+          </tr>
+          <tr>
+            <td width="12" height="12" align="right" valign="top"><img src="App_Images/borde_lb.gif" width="12" height="12"></td>
+            <td class="innerPage" ></td>
+            <td width="12" height="12" align="left" valign="top"><img src="App_Images/borde_rb.gif" width="12" height="12"></td>
+          </tr>
+        </table>
+    </div>
+    
+    
+    
+        <div id="modalPageMoreInfoNotButton" class="modal" >
+        <table  border="0" align="center"  cellpadding="0" cellspacing="0" >
+          <tr>
+            <td width="12" height="12" align="right" valign="bottom"><img src="App_Images/borde_lt.gif" width="12" height="12"></td>
+            <td height="12" class="innerPage"></td>
+            <td width="12" height="12" align="left" valign="bottom"><img src="App_Images/borde_rt.gif" width="12" height="12"></td>
+          </tr>
+          <tr class="innerPage">
+            <td></td>
+            <td>
+                   <table border="0" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <td>
+                            <img width="40" height="38" src="App_Images/alerta.png" />
+                        </td>
+                        <td width = "100%">
+                            <span class="titulo"><div id="MsgTextNotButton"class="modalBody"></div></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="innerPage">
+          <td></td>
+            <td align="center">
+       <%--         <table border="0" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <td>
+                            <input id="Button1" type="button" value="Ok" class="bt_sm" onclick="hideModal('modalPageMoreInfo')" />
+                        </td>
+                    </tr>
+                </table>--%>
+            </td>
+          <td></td>
+          </tr>
+          <tr>
+            <td width="12" height="12" align="right" valign="top"><img src="App_Images/borde_lb.gif" width="12" height="12"></td>
+            <td class="innerPage" ></td>
+            <td width="12" height="12" align="left" valign="top"><img src="App_Images/borde_rb.gif" width="12" height="12"></td>
+          </tr>
+        </table>
+    </div>
+
+    <div id="modalBackground"></div>
+    <input type="hidden" id="hideType" name="hideType" value="replace" />
+
+    <script language="javascript" type="text/javascript">
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        prm.add_initializeRequest(InitializeRequestHandler);
+        prm.add_endRequest(EndRequestHandler);
+        var pbQueue = new Array();
+        var argsQueue = new Array();
+    </script> 
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kofba.Framework.Workflow</name>
+    </assembly>
+    <members>
+        <member name="T:Kofba.Framework.Workflow.DocumentState">
+            <summary>
+            Manage the state of a document, referencing to it by object id.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Workflow.DocumentState.CanAdd(Kofba.Framework.Workflow.IState)">
+            <summary>
+            Determines if is possible to change the status into another.
+            </summary>
+            <param name="state">The new state to try to change.</param>
+            <returns>Returns true if its possible.</returns>
+        </member>
+        <member name="T:Kofba.Framework.Workflow.StateWorkflowDocument">
+            <summary>
+            Manage the state of a document, referencing to it by object id.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Workflow.StateWorkflowDocument.CanAdd(Kofba.Framework.Workflow.IState)">
+            <summary>
+            Determines if is possible to change the status into another.
+            </summary>
+            <param name="state">The new state to try to change.</param>
+            <returns>Returns true if its possible.</returns>
+        </member>
+    </members>
+</doc>

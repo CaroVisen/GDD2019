@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kofba.Framework.Utils</name>
+    </assembly>
+    <members>
+        <member name="M:Kofba.Framework.Utils.Email.MailMessageConfigurator.AddAttachment(System.String)">
+            <summary>
+            Adds an attach file from the current local path.
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Kofba.Framework.Utils.Email.MailMessageConfigurator.AddAttachment(System.IO.Stream,System.String)">
+            <summary>
+            Adds an attach file from a stream with the selected filename.
+            </summary>
+            <param name="contentStream"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Kofba.Framework.Utils.Email.MailMessageConfigurator.GetMailMessage">
+            <summary>
+            Gets a MailMessage object from the current settings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Kofba.Framework.Utils.Compression.CompressedStream">
+            <summary>
+            Supports data compression on a stream
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Utils.SMS.SMSHelper.SetConnectionString(System.String)">
+            <summary>
+            Initiliz the comunication SQL
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:Kofba.Framework.Utils.SMS.SMSHelper.Send">
+            <summary>
+            Send a message with the properties
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Utils.SMS.SMSHelper.Send(System.String,System.String,Kofba.Framework.Comunication.SMS.Consumer)">
+            <summary>
+            Send a message
+            </summary>
+            <param name="Message"></param>
+            <param name="MovilNumber"></param>
+            <param name="consumer"></param>
+        </member>
+        <member name="M:Kofba.Framework.Utils.SMS.SMSHelper.Send(System.String,System.String,Kofba.Framework.Comunication.SMS.Consumer,System.DateTime)">
+            <summary>
+            Send a message at the time specified in the parameter OnTime
+            </summary>
+            <param name="Message"></param>
+            <param name="MovilNumber"></param>
+            <param name="consumer"></param>
+            <param name="onTime"></param>
+        </member>
+        <member name="M:Kofba.Framework.Utils.SMS.SMSHelper.Send(System.String,System.String,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="Message"></param>
+            <param name="MovilNumber"></param>
+            <param name="consumer"></param>
+        </member>
+        <member name="M:Kofba.Framework.Utils.SMS.SMSHelper.Send(System.String,System.String,System.Guid,System.DateTime)">
+            <summary>
+            Send a message at the time specified in the parameter OnTime
+            </summary>
+            <param name="Message"></param>
+            <param name="MovilNumber"></param>
+            <param name="consumer"></param>
+            <param name="onTime"></param>
+        </member>
+        <member name="M:Kofba.Framework.Utils.SMS.SMSHelper.CreateConsumer(System.String)">
+            <summary>
+            This method return a Consumer that is used for send message.
+            Key and Id are the values more important.
+            </summary>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Kofba.Framework.Utils.SMS.SMSHelper.Consumer">
+            <summary>
+            Consumer enabled to send messages
+            </summary>
+        </member>
+    </members>
+</doc>

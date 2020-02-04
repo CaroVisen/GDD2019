@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kofba.Framework.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Kofba.Framework.Domain.Security.ISecurityRestriction">
+            <summary>
+            Enables custom restriccions to access.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Domain.Security.ISecurityRestriction.Check(Kofba.Framework.Domain.Security.SecurityUser,System.Object)">
+            <summary>
+            Check permission for the user.
+            </summary>
+            <param name="user">An user.</param>
+            <param name="content">Content to check.</param>
+            <returns>Returns True if the account name has permission.</returns>
+        </member>
+        <member name="P:Kofba.Framework.Domain.Security.ISecurityRestriction.Parameter">
+            <summary>
+            Aditional info.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Domain.Employee.EmployeeFileRecordIFilterByCompany.Comparer(System.Object,System.Object)">
+            <summary>
+            Return true for Equals. Use the Equals method of the type of source to comparer.
+            </summary>
+            <param name="source">EmployeeFileRecord</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Domain.ActiveDirectory.ActiveDirectoryController.InitializeStructure">
+            <summary>
+            Creates the elementhal structure into database if needed.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Domain.ActiveDirectory.ActiveDirectoryController.VerifyDatabaseStructure">
+            <summary>
+            Checks database searching for table ActiveDirectory, and stored procedures
+            sp_ActiveDirectoryDisableAll, sp_ActiveDirectoryGetByAccountName, sp_ActiveDirectoryGetAll()
+            and sp_ActiveDirectoryUpdate()
+            </summary>
+            <returns>Returns False if needs to reconstruct.</returns>
+        </member>
+        <member name="T:Kofba.Framework.Domain.WebService.Services">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.WS_GetActiveDirectory">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.WS_GetActiveDirectoryAsync">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.WS_GetActiveDirectoryAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.WS_GetEmployeeFiles">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.WS_GetEmployeeFilesAsync">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.WS_GetEmployeeFilesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.WebService.Services.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Kofba.Framework.Domain.WebService.Services.WS_GetActiveDirectoryCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Kofba.Framework.Domain.WebService.Services.WS_GetEmployeeFilesCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Kofba.Framework.Domain.WebService.ActiveDirectoryRecord">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.ActiveDirectoryRecord.DisplayName">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.ActiveDirectoryRecord.AccountName">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.ActiveDirectoryRecord.Mail">
+            <remarks/>
+        </member>
+        <member name="T:Kofba.Framework.Domain.WebService.EmployeeFileRecord">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Filenumber">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Lastname">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Firstname">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Sex">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Street">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Number">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Floor">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Department">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Phone">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PostalCode">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.City">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.State">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.DocumentType">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.DocumentNumber">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Cuil">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Birthday">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.StartDate">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.OperativeUnitId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.OperativeUnitDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PositionId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PositionDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.SuperiorFilenumber">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.SuperiorFullname">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Afjp">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingHoursDaily">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingHoursMonthly">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlaceId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlaceDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlaceCity">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.CostCenter">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.AccountName">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.DisplayName">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Mail">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Fullname">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.Company">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.CommunicationTypeId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.FunctionId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.FunctionDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PersonalGroupId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PersonalGroupDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PersonalAreaId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PersonalAreaDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.SalaryAreaId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.SalaryAreaDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.SuperiorOperativeUnitId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.SuperiorOperativeUnitDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PersonalSubdivisionId">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.PersonalSubdivisionDescription">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlaceStreet">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlaceNumber">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlacePostalCode">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlaceTelephone">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.WorkingPlaceFax">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.CardNumber">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.IdentificationVersion">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.EmployeeFileRecord.ControlAccessGroupId">
+            <remarks/>
+        </member>
+        <member name="T:Kofba.Framework.Domain.WebService.WS_GetActiveDirectoryCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Kofba.Framework.Domain.WebService.WS_GetActiveDirectoryCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.WS_GetActiveDirectoryCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Kofba.Framework.Domain.WebService.WS_GetEmployeeFilesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Kofba.Framework.Domain.WebService.WS_GetEmployeeFilesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Kofba.Framework.Domain.WebService.WS_GetEmployeeFilesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="M:Kofba.Framework.Domain.Workflow.StateController.InitializeStructure">
+            <summary>
+            Creates the elementhal structure into database if needed.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Domain.Workflow.StateController.VerifyDatabaseStructure">
+            <summary>
+            Checks database searching for table StateWorkflow, and stored procedures
+            sp_StateWorkflow_Insert and sp_StateWorkflow_SelectById
+            </summary>
+            <returns>Returns False if needs to reconstruct.</returns>
+        </member>
+        <member name="T:Kofba.Framework.Domain.ActiveDirectory.ActiveDirectoryHelper">
+            <summary>
+            Gets information about Active Directory.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Domain.ActiveDirectory.ActiveDirectoryHelper.GetAll">
+            <summary>
+            Get all enabled Active Directory users.
+            </summary>
+            <returns>Returns a collection of ActiveDirectoryRecord</returns>
+        </member>
+        <member name="M:Kofba.Framework.Domain.ActiveDirectory.ActiveDirectoryHelper.GetByAccountName(System.String)">
+            <summary>
+            Get the user info in Active Directory.
+            </summary>
+            <param name="userId">The user account name.</param>
+            <returns>Active Directory user record.</returns>
+        </member>
+    </members>
+</doc>

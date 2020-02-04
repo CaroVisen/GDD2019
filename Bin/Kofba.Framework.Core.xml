@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kofba.Framework.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Kofba.Framework.Core.Orm.ObjectQuery.IsArrayProperty(System.String)">
+            <summary>
+            Validate if a string is like: Axxxxx[nnn] 
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.ObjectQuery.ExtractPropertyIndex(System.String)">
+            <summary>
+            Returns nnn where string like: Axxxxx[nnn]
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.ObjectQuery.ExtractPropertyname(System.String)">
+            <summary>
+            Returns Axxxxx where string like: Axxxxx[nnn]
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.ObjectQuery.CreateSingleInstance``1(System.String,System.String)">
+            <summary>
+            Create an instance of an object and saves into cache.
+            </summary>
+            <typeparam name="T">Object type.</typeparam>
+            <param name="assemblyName">Assembly name.</param>
+            <param name="className">Class name.</param>
+            <returns>If previously was created an object of the same type returns it.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.ObjectQuery.CreateSingleInstance(System.String,System.String)">
+            <summary>
+            Create an instance of an object and saves into cache.
+            </summary>
+            <param name="assemblyName">Assembly name.</param>
+            <param name="className">Class name.</param>
+            <returns>If previously was created an object of the same type returns it.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.ObjectQuery.Clone``1(System.Object)">
+            <summary>
+            Clone serializable object
+            </summary>
+            <typeparam name="T">Object type.</typeparam>
+            <param name="instance">Instance to clone</param>
+            <returns>Cloned object</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.ObjectQuery.Clone(System.Object)">
+            <summary>
+            Clone serializable object
+            </summary>
+            <param name="instance">Instance to clone</param>
+            <returns>Cloned object</returns>
+        </member>
+        <member name="T:Kofba.Framework.Core.Singleton.Singleton`2">
+            <summary>
+            The Singleton implementation, it resorts to the allocator to enforce the creation policy.
+            </summary>
+            <remarks>
+            Depending on the allocator selected the creation policy will change, it is up to the designer to use the creation policy that better represent the needs of the whole system.<br/>
+            It is a very good idea to inherit from Singleton with a default allocator to simplify the type definition for the application developers, but it is not a requirement. The library already provides LazySingleton and StaticSingleton as standard types, so you can use them instead of the full descriptive version.<br/>For more information about Allocator Policies and Generic Singletons please refer to the "Modern C++ Design: Generic Programming and Design Patterns Applied" from Andrei Alexandrescu.
+            </remarks>
+        </member>
+        <member name="M:Kofba.Framework.Core.Singleton.Singleton`2.#cctor">
+            <summary>
+            The protected parameterless constructor used to not allow the creation of multiple Singleton classes. This property must be enforced by the singleton users.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.Singleton.Singleton`2.Dispose">
+            <summary>
+            The standard Dispose pattern.
+            </summary>
+        </member>
+        <member name="P:Kofba.Framework.Core.Singleton.Singleton`2.Instance">
+            <summary>
+            The Singleton implementation of the Instance method defer the creation policy to its allocator, so this method just delegate the Instance retrieval to the Instance method of the allocator.
+            </summary>
+        </member>
+        <member name="T:Kofba.Framework.Core.Singleton.StaticSingleton`1">
+            <summary>
+            An StaticSingleton using an StaticAllocator used just to simplify the inheritance syntax.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.FilterEqual(System.String,Kofba.Framework.Core.ItemCollection{System.String})">
+            <summary>
+            No debe ser usado en colecciones mayores a 100 registros siempre 
+            dependiendo de la cantidad de campos que tenga el objeto.
+            </summary>
+            <param name="fieldname"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.FilterLike(Kofba.Framework.Core.IFilter,System.String)">
+            <summary>
+            Utiliza el objeto de tipo IFilter par afiltrar que objetos serán devueltos.
+            </summary>
+            <param name="comparer"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.FilterLike(System.String,System.String)">
+            <summary>
+            No debe ser usado en colecciones mayores a 100 registros siempre 
+            dependiendo de la cantidad de campos que tenga el objeto.
+            </summary>
+            <param name="fieldname"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.FindTop(System.Int32)">
+            <summary>
+            Find the Top N items.
+            </summary>
+            <param name="numberOfItems">Number of objects to retrieve.</param>
+            <returns>The first n objects of the collection.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.FindAll(System.Predicate{`0})">
+            <summary>
+            Find object that fulfill some predicate
+            </summary>
+            <param name="condition">A predicate</param>
+            <returns>ItemCollection with items that fulfill the condition</returns>
+            <example>
+            Response.Write(
+            EmployeeHelper.GetAll().FindAll(
+                       delegate(EmployeeFileRecord record)
+                       {
+                           return record.City == "LOMAS DE ZAMORA";
+                       }
+                   )[0].City
+               );
+            </example>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.FindFirst(System.Predicate{`0})">
+            <summary>
+            Find the first object that fulfill some predicate
+            </summary>
+            <param name="condition">A predicate</param>
+            <returns>The first object that fulfill the condition</returns>
+            <example>
+            Response.Write(
+                EmployeeHelper.GetAll().FindFirst(
+                    delegate(EmployeeFileRecord record)
+                    {
+                        return record.City == "LAFERRERE";
+                    }
+                ).City
+            );
+            </example>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Kofba.Framework.Core.ItemCollection`1.Sort(System.Comparison{`0})" -->
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.Sort">
+            <summary>
+            Sort the ItemCollection using IComparable
+            </summary>
+            <returns>returns new ItemCollection list.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.Add(System.Object)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.IList"></see>.
+            </summary>
+            
+            <returns>
+            The position into which the new element was inserted.
+            </returns>
+            
+            <param name="value">The <see cref="T:System.Object"></see> to add to the <see cref="T:System.Collections.IList"></see>. </param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"></see> is read-only.-or- The <see cref="T:System.Collections.IList"></see> has a fixed size. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.IList"></see> contains a specific value.
+            </summary>
+            
+            <returns>
+            true if the <see cref="T:System.Object"></see> is found in the <see cref="T:System.Collections.IList"></see>; otherwise, false.
+            </returns>
+            
+            <param name="value">The <see cref="T:System.Object"></see> to locate in the <see cref="T:System.Collections.IList"></see>. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.IList"></see>.
+            </summary>
+            
+            <returns>
+            The index of value if found in the list; otherwise, -1.
+            </returns>
+            
+            <param name="value">The <see cref="T:System.Object"></see> to locate in the <see cref="T:System.Collections.IList"></see>. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.IList"></see> at the specified index.
+            </summary>
+            
+            <param name="value">The <see cref="T:System.Object"></see> to insert into the <see cref="T:System.Collections.IList"></see>. </param>
+            <param name="index">The zero-based index at which value should be inserted. </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index in the <see cref="T:System.Collections.IList"></see>. </exception>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"></see> is read-only.-or- The <see cref="T:System.Collections.IList"></see> has a fixed size. </exception>
+            <exception cref="T:System.NullReferenceException">value is null reference in the <see cref="T:System.Collections.IList"></see>.</exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.IList"></see>.
+            </summary>
+            
+            <param name="value">The <see cref="T:System.Object"></see> to remove from the <see cref="T:System.Collections.IList"></see>. </param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"></see> is read-only.-or- The <see cref="T:System.Collections.IList"></see> has a fixed size. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:System.Collections.IList"></see> item at the specified index.
+            </summary>
+            
+            <param name="index">The zero-based index of the item to remove. </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index in the <see cref="T:System.Collections.IList"></see>. </exception>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"></see> is read-only.-or- The <see cref="T:System.Collections.IList"></see> has a fixed size. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.ToArray">
+            <summary>
+            Convert an ItemCollection into an Array of type T. Usefull in webservices.
+            </summary>
+            <returns>An array that contains all current items.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.ItemCollection`1.ToObjectCollection">
+            <summary>
+            Convert current collection into an object collection.
+            </summary>
+            <returns>Returns an ItemCollection of type object</returns>
+        </member>
+        <member name="P:Kofba.Framework.Core.ItemCollection`1.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            
+            <returns>
+            The element at the specified index.
+            </returns>
+            
+            <param name="index">The zero-based index of the element to get or set. </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index in the <see cref="T:System.Collections.IList"></see>. </exception>
+            <exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.IList"></see> is read-only. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Kofba.Framework.Core.ItemCollection`1.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"></see> is read-only.
+            </summary>
+            
+            <returns>
+            true if the <see cref="T:System.Collections.IList"></see> is read-only; otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Kofba.Framework.Core.ItemCollection`1.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"></see> has a fixed size.
+            </summary>
+            
+            <returns>
+            true if the <see cref="T:System.Collections.IList"></see> has a fixed size; otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Kofba.Framework.Core.Singleton.Allocator`1">
+            <summary>
+            The allocator is the object that is able to create the real instance of the Singleton and the one that handles the creation policy.
+            </summary>
+            <remarks>
+            Allocators are special objects that must have default parameterless constructors and the assembly that contains them must have private reflection security permissions.<br/>
+            For more information about Allocator Policies and Generic Singletons please refer to the "Modern C++ Design: Generic Programming and Design Patterns Applied" from Andrei Alexandrescu.
+            </remarks>
+        </member>
+        <member name="M:Kofba.Framework.Core.Singleton.Allocator`1.#ctor">
+            <summary>
+            The parameterless protected Constructor.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.Singleton.Allocator`1.Dispose">
+            <summary>
+            The implementation of the IDisposable interface.
+            </summary>
+        </member>
+        <member name="P:Kofba.Framework.Core.Singleton.Allocator`1.Instance">
+            <summary>
+            The property returns the only instance of the Singleton Object in question.
+            </summary>
+            <remarks>This property implementation must enforce the Single Object property of Singletons throwing an exception.</remarks>
+        </member>
+        <member name="T:Kofba.Framework.Core.Singleton.StaticAllocator`1">
+            <summary>
+            An static threadsafe allocator that creates the object on class loading by the framework.
+            </summary>
+            <remarks>The framework specifies that the static constructor is called in an isolated compartment so there is no posibility that multiple threads can access the static constructor.</remarks>
+        </member>
+        <member name="P:Kofba.Framework.Core.Singleton.StaticAllocator`1.Instance">
+            <summary>
+            The static allocator Instance property returns the instance created on class loading.
+            </summary>
+            <remarks>This means that the singleton is instantiated at the moment in which a class has a reference to that type even if it never calls the Instance method.</remarks>
+        </member>
+        <member name="T:Kofba.Framework.Core.Orm.HashHelper">
+            <summary>
+            Creates a hash using SHA1.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.HashHelper.GetHash(System.String)">
+            <summary>
+            Makes hash from text string
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.HashHelper.GetHash(System.Object)">
+            <summary>
+            Makes hash using all the properties content. Its usefull to determine if two instances
+            arent the same, but are similar.
+            Its usefull to cache references about an object. (sample: Cast model)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.AbstractMapper`2.GetItemCollection">
+            <summary>
+            Gets ItemCollection mapping source into objects.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Kofba.Framework.Core.Singleton.LazySingleton`1">
+            <summary>
+            A LazySingleton implementation using a LazyAllocator just to simplify the syntax of the Singleton inheritance.
+            </summary>
+        </member>
+        <member name="T:Kofba.Framework.Core.Singleton.LazyAllocator`1">
+            <summary>
+            A lazy allocator that creates the object the first time a reference to the singleton is required, it is thread safe using a lock over the type parameter.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.Singleton.LazyAllocator`1.#ctor">
+            <summary>
+            The constructor of the LazyAllocator
+            </summary>
+        </member>
+        <member name="P:Kofba.Framework.Core.Singleton.LazyAllocator`1.Instance">
+            <summary>
+            The instance property creates the singleton object upon the first request.
+            </summary>
+            <remarks>The allocator ensure the thread safety using a lock and it enforces the Singleton uniqueness property.</remarks>
+        </member>
+        <member name="T:Kofba.Framework.Core.Orm.LabelAttribute">
+            <summary>
+            Mark an alias for mapping.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.LabelAttribute.GetPropertyname(System.Type,System.String)">
+            <summary>
+            Gets the property name of some "type" thats is labeled "name".
+            </summary>
+            <param name="type">Type that use LabelAttribute.</param>
+            <param name="propertyName">Name of the label.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.LabelAttribute.#ctor(System.String)">
+            <summary>
+            Mark an attribute with a label.
+            </summary>
+            <param name="name">Label name.</param>
+        </member>
+        <member name="P:Kofba.Framework.Core.Orm.LabelAttribute.Name">
+            <summary>
+            Label name.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.IController`1.Save">
+            <summary>
+            Save record into database.
+            </summary>
+            <returns>Returns true if operation success.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.IController`1.Load">
+            <summary>
+            Load records into database.
+            </summary>
+            <returns>Returns true if operation success.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Core.IController`1.GetAll">
+            <summary>
+            Gets all records loaded using Load().
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Kofba.Framework.Core.IController`1.Record">
+            <summary>
+            Defines the record to save/load into database.
+            </summary>
+        </member>
+        <member name="T:Kofba.Framework.Core.Orm.NoMapAttribute">
+            <summary>
+            Mark a property as not mappeable.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Core.Orm.NoMapAttribute.IsDefined(System.Type,System.String)">
+            <summary>
+            Determines if a property has this attribute.
+            </summary>
+            <param name="type">Class to analyze.</param>
+            <param name="propertyName">Name of the property to analyze.</param>
+            <returns>
+            If the property of the class has been defined with [NoMap] returns true
+            else returns false.
+            </returns>
+        </member>
+    </members>
+</doc>

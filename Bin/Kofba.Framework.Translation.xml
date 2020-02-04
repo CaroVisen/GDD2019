@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kofba.Framework.Translation</name>
+    </assembly>
+    <members>
+        <member name="M:Kofba.Framework.Translation.Translator.GetObject(System.String)">
+            <summary>
+            Obtiene un recurso en base al parámetro "name" pasado.
+            </summary>
+            <param name="name"></param>
+            <returns>ITranslatorEngine</returns>
+        </member>
+        <member name="P:Kofba.Framework.Translation.Translator.Engines">
+            <summary>
+            Contiene todos los recursos donde se buscaran las traducciones entre otras cosas.
+            </summary>
+        </member>
+        <member name="T:Kofba.Framework.Translation.ControlTranslator">
+            <summary>
+            Esta clase se encarga de traducir todos los objetos que encuentra en la insterface
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Translation.ControlTranslator.Translate(System.Web.UI.Control)">
+            <summary>
+            A partir de un objeto traduce el mismo y todos sus hijos.
+            </summary>
+            <param name="control"></param>
+        </member>
+    </members>
+</doc>

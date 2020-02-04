@@ -1,0 +1,1 @@
+<%@ Application Inherits="AccessManagement.WebSite.Global" Language="C#" %>

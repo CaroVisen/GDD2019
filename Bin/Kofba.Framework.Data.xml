@@ -1,0 +1,436 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kofba.Framework.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Kofba.Framework.Data.Persistence.PersistenceSessionManager">
+            <summary>
+            Handles creation and management of sessions and transactions.  It is a singleton because 
+            building the initial session factory is very expensive. Inspiration for this class came 
+            from Chapter 8 of Hibernate in Action by Bauer and King.  Although it is a sealed singleton
+            you can use TypeMock (http://www.typemock.com) for more flexible testing.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceSessionManager.#ctor">
+            <summary>
+            Initializes the NHibernate session factory upon instantiation.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceSessionManager.RegisterInterceptor(NHibernate.IInterceptor)">
+            <summary>
+            Allows you to register an interceptor on a new session.  This may not be called if there is already
+            an open session attached to the HttpContext.  If you have an interceptor to be used, modify
+            the HttpModule to call this before calling BeginTransaction().
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceSessionManager.GetSession(NHibernate.IInterceptor)">
+            <summary>
+            Gets a session with or without an interceptor.  This method is not called directly; instead,
+            it gets invoked from other public methods.
+            </summary>
+        </member>
+        <member name="P:Kofba.Framework.Data.Persistence.PersistenceSessionManager.Instance">
+            <summary>
+            This is a thread-safe, lazy singleton.  See http://www.yoda.arachsys.com/csharp/singleton.html
+            for more details about its implementation.
+            </summary>
+        </member>
+        <member name="T:Kofba.Framework.Data.Persistence.PersistenceSessionManager.Nested">
+            <summary>
+            Assists with ensuring thread-safe, lazy singleton
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Transformation.FileReader.FileCheck">
+            <summary>
+            Used in CheckLines()
+            Optionally used to check file integrity
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Transformation.FileReader.FileParse">
+            <summary>
+            Used in ReadLine() 
+            Return an object array with a single line contents
+            "GetCurrentLine() returns curren line"
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Transformation.FileReader.FileOpen">
+            <summary>
+            Used in Open()
+            Need invoke : SetRowCount(), SetColCount()
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Transformation.FileReader.FileClose">
+            <summary>
+            Used in Close()
+            Here you can clean lists, stack, etc. or may be empty
+            </summary>
+        </member>
+        <member name="T:Kofba.Framework.Data.Sql.SqlHelper">
+            <summary>
+            Sql Access to the Application Database.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlHelper.CountObjects(System.String[])">
+            <summary>
+            Search in sysobjects table a list of objects
+            </summary>
+            <param name="objects">Objects names</param>
+            <returns>The number of entries found in sysobjects</returns>
+        </member>
+        <member name="T:Kofba.Framework.Data.Persistence.PersistenceHelper">
+            <summary>
+            Helper to persist objects.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.Save(System.Object)">
+            <summary>
+            For entities that have assigned ID's, you must explicitly call Save to add a new one.
+            See http://www.hibernate.org/hib_docs/reference/en/html/mapping.html#mapping-declaration-id-assigned.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.SaveOrUpdate(System.Object)">
+            <summary>
+            For entities with automatatically generated IDs, such as identity, SaveOrUpdate may 
+            be called when saving a new entity.  SaveOrUpdate can also be called to update any 
+            entity, even if its ID is assigned.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.Load``1(NHibernate.Expression.ICriterion[])">
+            <summary>
+            Loads an instance of type T from the database.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.Get``1(NHibernate.Expression.Order[],NHibernate.Expression.ICriterion[])">
+            <summary>
+            NOT TESTED
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="orders"></param>
+            <param name="expressions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.GetFirst``1(NHibernate.Expression.ICriterion[])">
+            <summary>
+            Loads an instance of type T from the database.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.GetAll``1">
+            <summary>
+            Gets all items of type T.
+            </summary>
+            <typeparam name="T">A type of object.</typeparam>
+            <returns>Collection of all items of this type.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.Recover(Kofba.Framework.Core.IIdentifiable)">
+            <summary>
+            Gets current instance from repository.
+            </summary>
+            <param name="instance">An instance to recover.</param>
+            <returns>An instance into nHibernate session.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.PersistenceHelper.GetObject(System.Type,System.String,System.Object)">
+            <summary>
+            Devuelve un objeto del tipo typeObject buscando por el campo y valor pasados.
+            </summary>
+            <param name="typeObject"></param>
+            <param name="fieldName"></param>
+            <param name="searchValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Kofba.Framework.Data.Persistence.PersistenceHelper.session">
+            <summary>
+            Exposes the ISession.
+            </summary>
+        </member>
+        <member name="T:Kofba.Framework.Data.Persistence.Expression">
+            <summary>
+            The <c>Expression</c> namespace may be used by applications as a framework for building 
+            new kinds of <see cref="T:NHibernate.Expression.ICriterion"/>. However, it is intended that most applications will 
+            simply use the built-in criterion types via the static factory methods of this class.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Eq(System.String,System.Object)">
+            <summary>
+            Apply an "equal" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="value">The value for the Property.</param>
+            <returns>An <see cref="T:NHibernate.Expression.EqExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Like(System.String,System.Object)">
+            <summary>
+            Apply a "like" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="value">The value for the Property.</param>
+            <returns>A <see cref="T:NHibernate.Expression.LikeExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.InsensitiveLike(System.String,System.Object)">
+            <summary>
+            A case-insensitive "like", similar to Postgres "ilike" operator
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="value">The value for the Property.</param>
+            <returns>An <see cref="T:NHibernate.Expression.InsensitiveLikeExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Gt(System.String,System.Object)">
+            <summary>
+            Apply a "greater than" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="value">The value for the Property.</param>
+            <returns>A <see cref="T:NHibernate.Expression.GtExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Lt(System.String,System.Object)">
+            <summary>
+            Apply a "less than" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="value">The value for the Property.</param>
+            <returns>A <see cref="T:NHibernate.Expression.LtExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Le(System.String,System.Object)">
+            <summary>
+            Apply a "less than or equal" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="value">The value for the Property.</param>
+            <returns>A <see cref="T:NHibernate.Expression.LeExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Ge(System.String,System.Object)">
+            <summary>
+            Apply a "greater than or equal" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="value">The value for the Property.</param>
+            <returns>A <see cref="T:NHibernate.Expression.GtExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Between(System.String,System.Object,System.Object)">
+            <summary>
+            Apply a "between" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="lo">The low value for the Property.</param>
+            <param name="hi">The high value for the Property.</param>
+            <returns>A <see cref="T:NHibernate.Expression.BetweenExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.In(System.String,System.Object[])">
+            <summary>
+            Apply an "in" constraint to the named property 
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="values">An array of values.</param>
+            <returns>An <see cref="T:NHibernate.Expression.InExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.In(System.String,System.Collections.ICollection)">
+            <summary>
+            Apply an "in" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <param name="values">An ICollection of values.</param>
+            <returns>An <see cref="T:NHibernate.Expression.InExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.IsNull(System.String)">
+            <summary>
+            Apply an "is null" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <returns>A <see cref="T:NHibernate.Expression.NullExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.EqProperty(System.String,System.String)">
+            <summary>
+            Apply an "equal" constraint to two properties
+            </summary>
+            <param name="propertyName">The lhs Property Name</param>
+            <param name="otherPropertyName">The rhs Property Name</param>
+            <returns>A <see cref="T:NHibernate.Expression.EqPropertyExpression"/> .</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.LtProperty(System.String,System.String)">
+            <summary>
+            Apply a "less than" constraint to two properties
+            </summary>
+            <param name="propertyName">The lhs Property Name</param>
+            <param name="otherPropertyName">The rhs Property Name</param>
+            <returns>A <see cref="T:NHibernate.Expression.LtPropertyExpression"/> .</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.LeProperty(System.String,System.String)">
+            <summary>
+            Apply a "less than or equal" constraint to two properties
+            </summary>
+            <param name="propertyName">The lhs Property Name</param>
+            <param name="otherPropertyName">The rhs Property Name</param>
+            <returns>A <see cref="T:NHibernate.Expression.LePropertyExpression"/> .</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.IsNotNull(System.String)">
+            <summary>
+            Apply an "is not null" constraint to the named property
+            </summary>
+            <param name="propertyName">The name of the Property in the class.</param>
+            <returns>A <see cref="T:NHibernate.Expression.NotNullExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.And(NHibernate.Expression.ICriterion,NHibernate.Expression.ICriterion)">
+            <summary>
+            Return the conjuction of two expressions
+            </summary>
+            <param name="lhs">The Expression to use as the Left Hand Side.</param>
+            <param name="rhs">The Expression to use as the Right Hand Side.</param>
+            <returns>An <see cref="T:NHibernate.Expression.AndExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Or(NHibernate.Expression.ICriterion,NHibernate.Expression.ICriterion)">
+            <summary>
+            Return the disjuction of two expressions
+            </summary>
+            <param name="lhs">The Expression to use as the Left Hand Side.</param>
+            <param name="rhs">The Expression to use as the Right Hand Side.</param>
+            <returns>An <see cref="T:NHibernate.Expression.OrExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Not(NHibernate.Expression.ICriterion)">
+            <summary>
+            Return the negation of an expression
+            </summary>
+            <param name="expression">The Expression to negate.</param>
+            <returns>A <see cref="T:NHibernate.Expression.NotExpression"/>.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Sql(NHibernate.SqlCommand.SqlString,System.Object[],NHibernate.Type.IType[])">
+            <summary>
+            Apply a constraint expressed in SQL, with the given SQL parameters
+            </summary>
+            <param name="sql"></param>
+            <param name="values"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Sql(NHibernate.SqlCommand.SqlString,System.Object,NHibernate.Type.IType)">
+            <summary>
+            Apply a constraint expressed in SQL, with the given SQL parameter
+            </summary>
+            <param name="sql"></param>
+            <param name="value"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Sql(NHibernate.SqlCommand.SqlString)">
+            <summary>
+            Apply a constraint expressed in SQL
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Sql(System.String)">
+            <summary>
+            Apply a constraint expressed in SQL
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Conjunction">
+            <summary>
+            Group expressions together in a single conjunction (A and B and C...)
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.Disjunction">
+            <summary>
+            Group expressions together in a single disjunction (A or B or C...)
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Persistence.Expression.AllEq(System.Collections.IDictionary)">
+            <summary>
+            Apply an "equals" constraint to each property in the key set of a IDictionary
+            </summary>
+            <param name="propertyNameValues">a dictionary from property names to values</param>
+            <returns></returns>
+        </member>
+        <member name="T:Kofba.Framework.Data.Sql.SqlDatabase">
+            <summary>
+            Sql Database access.
+            </summary>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.#ctor(System.String)">
+            <summary>
+            Builds sql data access.
+            </summary>
+            <param name="databaseKeyName">Name of web.config key to connection string of database.</param>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.CleanCache(System.String)">
+            <summary>
+            Clean cache items.
+            </summary>
+            <param name="key">Cache key, if empty clean all keys</param>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.ExecuteDataSet(System.String,System.Object[],System.String,System.Int32)">
+            <summary>
+            Execute query on stored procedure.
+            </summary>
+            <param name="storedProcedure">Stored procedure name.</param>
+            <param name="parameterValues">Stored procedure parameters.</param>
+            <param name="cacheKey">Name of cache key, null if no cache.</param>
+            <param name="commandTimeout">Timeout limit, -1 to use default timeout.</param>
+            <returns>Fill DataSet with result.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.ExecuteDataSet(System.String)">
+            <summary>
+            Execute free query.
+            </summary>
+            <param name="query">Free query</param>
+            <returns>Fill DataSet with result.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.ExecuteNonQuery(System.String,System.Object[],System.String,System.Int32)">
+            <summary>
+            Execute query.
+            </summary>
+            <param name="storedProcedure">Stored procedure name.</param>
+            <param name="parameterValues">Stored procedure parameters.</param>
+            <param name="cacheKey">Name of cache key, null if no cache.</param>
+            <param name="commandTimeout">Timeout limit, -1 to use default timeout.</param>
+            <returns>Rows affected.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.ExecuteReader(System.String,System.Object[],System.String,System.Int32)">
+            <summary>
+            Execute query.
+            </summary>
+            <param name="storedProcedure">Stored procedure name.</param>
+            <param name="parameterValues">Stored procedure parameters.</param>
+            <param name="cacheKey">Name of cache key, null if no cache.</param>
+            <param name="commandTimeout">Timeout limit, -1 to use default timeout.</param>
+            <returns>DataReader with result.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.ExecuteScalar(System.String,System.Object[],System.String,System.Int32)">
+            <summary>
+            Execute query.
+            </summary>
+            <param name="storedProcedure">Stored procedure name.</param>
+            <param name="parameterValues">Stored procedure parameters.</param>
+            <param name="cacheKey">Name of cache key, null if no cache.</param>
+            <param name="commandTimeout">Timeout limit, -1 to use default timeout.</param>
+            <returns>Object with scalar result.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.ExecuteCollection``1(System.String,System.Object[],System.String,System.Int32)">
+            <summary>
+            Execute query.
+            </summary>
+            <typeparam name="T">Object type</typeparam>
+            <param name="storedProcedure">Stored procedure name.</param>
+            <param name="parameterValues">Stored procedure parameters.</param>
+            <param name="cacheKey">Name of cache key, null if no cache.</param>
+            <param name="commandTimeout">Timeout limit, -1 to use default timeout.</param>
+            <returns>ItemCollection with result.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.ExecuteDynamic(System.String)">
+            <summary>
+            Execute free sql query without timeout limit.
+            </summary>
+            <param name="query"></param>
+            <returns>Result of dynamic query.</returns>
+        </member>
+        <member name="M:Kofba.Framework.Data.Sql.SqlDatabase.CountObjects(System.String[])">
+            <summary>
+            Search in sysobjects table a list of objects
+            </summary>
+            <param name="objects">Objects names</param>
+            <returns>The number of entries found in sysobjects</returns>
+        </member>
+    </members>
+</doc>

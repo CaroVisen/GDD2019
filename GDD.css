@@ -1,0 +1,676 @@
+/* Generales*/
+html {
+    scrollbar-face-color: #fff;
+    scrollbar-highlight-color: #eee;
+    scrollbar-shadow-color: #ccc;
+    scrollbar-3dlight-color: #eee;
+    scrollbar-arrow-color: #666;
+    scrollbar-track-color: #eee;
+    scrollbar-darkshadow-color: #eee;
+}
+
+body {
+    BACKGROUND-COLOR: #B7B4B0;
+    background-image: url(App_Images/bkg_coca.gif);
+    background-repeat: repeat-x;
+    background-position: top center;
+    FONT-SIZE: 5px;
+    FONT-FAMILY: arial;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mainPage {
+    width: 98%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.innerPage {
+    background-color: #FFFFFF;
+}
+
+.mainTable {
+    height: 100%;
+    padding: 0px;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+}
+
+.bkg_portada {
+    background-image: url(App_Images/bkg_bot.jpg);
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+.tit_nav_aplicativo {
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.tit_user_logged {
+    font-size: 8pt;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+
+.tit_aplicativo {
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #AD0004;
+}
+
+.descripcion {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #AD0004;
+}
+
+.titulo {
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #AD0004;
+    height: 15px;
+}
+
+.texto {
+    font-size: 8pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: Italic;
+    color: #666666;
+}
+
+.textor {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: Italic;
+    color: #666666;
+    text-align: right;
+}
+
+.textol {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: Italic;
+    color: #666666;
+    text-align: center;
+}
+
+a.link {
+    font-size: 8pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-decoration: none;
+}
+
+    a.link:hover {
+        color: #666666;
+        text-decoration: underline;
+    }
+
+
+
+
+
+/* Menu de Navegacion */
+
+.bkg_navBarApp {
+    background-color: #960004;
+    background-image: url(App_Images/bkg_navbar_deg.jpg);
+    background-repeat: repeat-x;
+    background-position: right bottom;
+}
+
+.navBarApp {
+    width: 100%;
+    height: 60px;
+    padding-left: 15px;
+    background-image: url(App_Images/bkg_navbar.jpg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+
+/* Footer */
+
+.footer {
+    height: 45px;
+    background-image: url(App_Images/dots.gif);
+    background-color: #FFFFFF;
+    background-repeat: repeat-x;
+    background-position: left top;
+    font-size: 8pt;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+}
+
+/* Forms Tablas */
+
+
+.td {
+    height: 22px;
+}
+
+.td01 {
+    height: 22px;
+    background-image: url(App_Images/bkg_td_01.gif);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 3px;
+    color: #FFFFFF;
+    border: 1px solid #800104;
+    text-align: center;
+}
+
+.td02 {
+    height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    background-color: #eeeeee;
+    border: 1px solid cccccc;
+}
+
+.td02_ {
+    height: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    background-color: #eeeeee;
+    border: 1px solid cccccc;
+    width: 50%;
+}
+
+.td02c {
+    height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+.tdr {
+    height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    background-color: #eeeeee;
+    text-align: right;
+}
+
+
+
+.td02r {
+    height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    background-color: #F2F2F2;
+    text-align: center;
+}
+
+.td03 {
+    height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #444444;
+    background-color: #cccccc;
+    text-align: center;
+}
+
+
+.td04 {
+    height: 73px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 8pt;
+    font-weight: normal;
+    color: #666666;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+
+.msg {
+    color: Red;
+}
+
+.td08 {
+    height: 73px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #444444;
+    background-color: #cccccc;
+    text-align: left;
+}
+
+.pnlL {
+    vertical-align: top;
+    min-width: 533px;
+}
+
+.pnlR {
+    vertical-align: top;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /*width:800px;*/
+    max-width: 940px;
+    height: 356px;
+}
+
+.msj {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: Italic;
+    color: #666666;
+    border: solid 2px #F2F2F2;
+    text-align: center;
+    margin: 3px;
+}
+
+.imgL {
+    CURSOR: hand;
+}
+
+.td05 {
+    height: 47px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    background-color: #eeeeee;
+    border: 1px solid cccccc;
+    text-align: center;
+}
+
+
+.td06 {
+    height: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666;
+    background-color: #F2F2F2;
+    border: solid 1px #666 2;
+    text-align: center;
+}
+
+.td06L {
+    height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666;
+    background-color: #cccccc;
+    border: solid 1px #666 2;
+    text-align: left;
+}
+
+.td07 {
+    height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+    background-color: #F2F2F2;
+    border: 1px solid cccccc;
+}
+
+.tdR {
+    width: 3px;
+    background-color: Red;
+}
+
+.tdY {
+    width: 3px;
+    background-color: Yellow;
+}
+
+.tdG {
+    width: 3px;
+    background-color: Green;
+}
+
+
+.text {
+    border: 0;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #666666;
+}
+
+.text1 {
+    border: 0;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666666;
+}
+
+.tM {
+    border: 1 solid #cccccc;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666666;
+    width: 98%;
+}
+
+.tMp {
+    border: 1 solid #cccccc;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666666;
+    width: 98%;
+}
+
+.textbox {
+    border: 0;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: right;
+}
+
+.separator {
+    height: 22px;
+}
+
+.separator1 {
+    height: 11px;
+}
+
+.field {
+    font-size: 7pt;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    COLOR: #666666;
+    border: 1px solid;
+    border-color: #cccccc;
+    BACKGROUND-COLOR: #FFFFFF;
+}
+
+
+.bt_sm {
+    background: transparent url('App_Images/bt_small.gif') no-repeat;
+    float: left;
+    width: 77px;
+    height: 30px;
+    border: 0;
+    padding: 5px;
+    margin: 3px;
+    COLOR: #333333;
+    FONT-SIZE: 12px;
+    CURSOR: hand;
+    LETTER-SPACING: 0px;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+
+.bt_bg {
+    background: transparent url('App_Images/bt_big.gif') no-repeat;
+    float: left;
+    width: 125px;
+    height: 30px;
+    border: 0;
+    padding: 5px;
+    margin: 3px;
+    COLOR: #333333;
+    FONT-SIZE: 12px;
+    CURSOR: hand;
+    LETTER-SPACING: 0px;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.bt_l {
+    background: transparent url('App_Images/bt_l.gif') no-repeat;
+    float: left;
+    width: 155px;
+    height: 30px;
+    border: 0;
+    padding: 5px;
+    margin: 3px;
+    COLOR: #333333;
+    FONT-SIZE: 12px;
+    CURSOR: hand;
+    LETTER-SPACING: 0px;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+
+.btn {
+    background: transparent url('App_Images/bt_big.gif') no-repeat;
+    float: none;
+    width: 125px;
+    height: 30px;
+    border: 0;
+    padding: 5px;
+    margin: 3px;
+    COLOR: #333333;
+    FONT-SIZE: 12px;
+    CURSOR: hand;
+    LETTER-SPACING: 0px;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.fecha {
+    font-size: 8pt;
+    font-family: tahoma, arial, helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    padding-left: 24px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+
+.modal {
+    border: none;
+    position: relative;
+    padding: 0px;
+    font-family: tahoma;
+    font-size: xx-small;
+    font-weight: bold;
+}
+
+
+.modalTop {
+    width: 100%;
+    background-color: #d70105;
+    color: #ffffff;
+    text-align: right;
+    height: 20px;
+}
+
+    .modalTop a, .modalTop a:visited {
+        color: #ffffff;
+    }
+
+.modalBody {
+    padding: 10px;
+}
+
+#modalBackground {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: #333333;
+    display: none;
+    opacity: 0.15;
+    filter: alpha(opacity=15);
+}
+
+#modalWindow, #modalPageCancel, #modalPageMoreInfo, #modalPageMoreInfoNotButton, #modalPageSendAuthor, #modalPageSendAuthorMoreInfo, #modalPageSendAdmin {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+
+
+.LockedColumnForTable {
+    left: expression(document.getElementById("ctl00_CPH_Competencies1_divForScrollingTable1").scrollleft-2);
+    position: relative;
+    width: 550px;
+}
+
+.ScrollerDivForTable {
+    left: expression(this.offsetParent.scrollleft-2);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 250px;
+}
+
+.dynamic-tab-pane-control.tab-pane {
+    position: relative;
+    width: 100%;
+    margin-right: -2px;
+}
+
+.dynamic-tab-pane-control .tab-row .tab {
+    width: 180px;
+    height: 20px;
+    background-image: url("App_Images/tab.png" );
+    position: relative;
+    top: 0;
+    display: inline;
+    float: left;
+    overflow: hidden;
+    cursor: Default;
+    margin: 1px -1px 1px 2px;
+    padding: 7px 0px 0px 0px;
+    border: 0;
+    font-weight: normal;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+    .dynamic-tab-pane-control .tab-row .tab.selected {
+        width: 180px !important;
+        height: 22px !important;
+        background-image: url( "App_Images/tab.active.png" ) !important;
+        border-bottom-width: 0;
+        z-index: 3;
+        padding: 7px 0 0px 0;
+        margin: 1px -3px -3px 0px;
+        top: -2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    .dynamic-tab-pane-control .tab-row .tab a {
+        color: Black;
+        text-decoration: none;
+        cursor: default;
+    }
+
+    .dynamic-tab-pane-control .tab-row .tab.hover {
+        width: 180px;
+        height: 20px;
+        background-image: url( "App_Images/tab.hover.png" );
+        background-repeat: no-repeat;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 7px 0 0px 0;
+    }
+
+
+.dynamic-tab-pane-control .tab-page {
+    clear: both;
+    border: 1px solid rgb( 145, 155, 156 );
+    background: rgb( 252, 252, 254 );
+    z-index: 2;
+    position: relative;
+    top: -2px;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#fffcfcfe, EndColorStr=#fff4f3ee, GradientType=0) progid:DXImageTransform.Microsoft.Shadow(Color=#ff919899, Strength=2, Direction=135);
+    padding: 5px;
+}
+
+.dynamic-tab-pane-control .tab-row {
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.r {
+    background-color: #ff0000;
+    height: 6px;
+}
+
+.g {
+    background-color: #008000;
+    height: 6px;
+}
+
+.y {
+    background-color: #ffff00;
+    height: 6px;
+}
+
+/* http://www.lotterypost.com/css-compress.aspx /*

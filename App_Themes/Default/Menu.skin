@@ -1,0 +1,9 @@
+<asp:Menu SkinID="Horizontal" runat="server" Orientation="Horizontal" StaticTopSeparatorImageUrl="~/App_Images/nav_arrow.gif" DynamicEnableDefaultPopOutImage="false" StaticEnableDefaultPopOutImage="false" >
+    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="5px" Font-Bold="True" Font-Size="11px"  ForeColor="#FFFFFF" Font-Names="Tahoma"  />
+    <StaticHoverStyle  Font-Underline="True" />
+    
+    <DynamicMenuItemStyle HorizontalPadding="7px" VerticalPadding="5px" Font-Bold="False" Font-Size="11px" ForeColor="#FFFFFF" Font-Names="Tahoma"/>
+    <DynamicMenuStyle BackColor="#9F0004" BorderColor="#7C0105" BorderStyle="Solid" BorderWidth="1px" HorizontalPadding="0px" VerticalPadding="0px" />
+    <DynamicHoverStyle BackColor="#B90004" Font-Underline="True"/>
+    
+</asp:Menu>
